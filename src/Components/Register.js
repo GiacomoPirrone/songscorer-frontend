@@ -17,27 +17,27 @@ const Register = props => (
                     <h1 className="font-weight-bold py-3">Signup</h1>
                     <h4>Join billions of other music enthusiasts today!</h4>
                     <form>
-                        <Form.Row>
+                        <Form.Row className="justify-content-center">
                             <Col lg="7">
                                 <Form.Control type="username" placeholder="Username" className="my-3 p-4" />
                             </Col> 
                         </Form.Row>
-                        <Form.Row>
+                        <Form.Row className="justify-content-center">
                             <Col lg="7">
                                 <Form.Control type="email" placeholder="Email" className="my-3 p-4" />
                             </Col> 
                         </Form.Row>
-                        <Form.Row>
+                        <Form.Row className="justify-content-center">
                             <Col lg="7">
                                 <Form.Control type="password" placeholder="Password" className="my-3 p-4" />
                             </Col> 
                         </Form.Row>
-                        <Form.Row>
+                        <Form.Row className="justify-content-center">
                             <Col lg="7">
-                                <Form.Control type="confirm password" placeholder="Confirm Password" className="my-3 p-4" />
+                                <Form.Control type="password" placeholder="Confirm Password" className="my-3 p-4" />
                             </Col> 
                         </Form.Row>
-                        <Form.Row>
+                        <Form.Row className="justify-content-center">
                             <Col lg="7">
                                 <Button className="btn1 mt-3 mb-5">Register</Button>
                             </Col> 
