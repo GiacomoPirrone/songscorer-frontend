@@ -58,3 +58,18 @@ button.btn1:hover {
   color: black;
   transition: 0.5s ease;
 }
+
+div.login-form {
+  margin: 100px 5px;
+}
+
+.row {
+  border-radius: 30px;
+  background-color: white;
+  box-shadow: 12px 12px 22px grey;
+}
+
+.row img{
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
