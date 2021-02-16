@@ -29,6 +29,11 @@ header {
   border-radius: 5%;
 }
 
+
+.login-signup-btn:focus {
+  outline: none;
+}
+
 .login-signup-btn:hover {
   background-color: #3D3D3D;
   transition: 0.5s ease;
@@ -73,3 +78,19 @@ div.login-form {
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
 }
+
+.links {
+  color: white;
+  padding: 0 20px;
+  transition: 0.5s ease;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.links:hover {
+  padding: 0 30px;
+  transition: 0.5s ease;
+  color: white;
+  text-decoration: none;
+}
+

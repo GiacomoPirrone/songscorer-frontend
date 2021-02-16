@@ -3,7 +3,7 @@ import '../index.css';
 
 
 import {Form, Container, Row, Col, Image, Button} from "react-bootstrap";
-
+import {Link} from 'react-router-dom';
 
 const Login = props => (
     <div className="login-form">
@@ -17,23 +17,23 @@ const Login = props => (
                     <h1 className="font-weight-bold py-3">Login</h1>
                     <h4>Sign in and start rating!</h4>
                     <form>
-                        <Form.Row>
+                        <Form.Row className="justify-content-center">
                             <Col lg="7">
                                 <Form.Control type="email" placeholder="Email" className="my-3 p-4" />
                             </Col> 
                         </Form.Row>
-                        <Form.Row>
+                        <Form.Row className="justify-content-center">
                             <Col lg="7">
                                 <Form.Control type="password" placeholder="Password" className="my-3 p-4" />
                             </Col> 
                         </Form.Row>
-                        <Form.Row>
+                        <Form.Row className="justify-content-center">
                             <Col lg="7">
                                 <Button className="btn1 mt-3 mb-5">Login</Button>
                             </Col> 
                         </Form.Row>
-                        <a href="#">Forgot Pasword</a>
-                        <p>Don't have an account? <a href="#">Register here</a></p>
+                        <Link className="login-links" to="/">Forgot Pasword</Link><br/>
+                        <p className="login-links">Don't have an account? <Link to="/">Register here</Link></p>
                     </form>
                 </Col>
             </Row>
