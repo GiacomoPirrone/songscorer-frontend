@@ -20,3 +20,41 @@ header {
   background-color: #292929 ;
 }
 
+.login-signup-btn {
+  margin: 0 2px;
+  background-color: #141414;
+  border: none;
+  padding: 10px;
+  color: white;
+  border-radius: 5%;
+}
+
+.login-signup-btn:hover {
+  background-color: #3D3D3D;
+  transition: 0.5s ease;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+  font-size: 15px;
+  margin: 0px 5px;
+}
+
+button.btn1 {
+ background-color: black;
+ border: none;
+ outline: none;
+ height: 50px;
+ width: 100%;
+ background-color: black;
+ color: white;
+ border-radius: 4px;
+ font-weight: bold;
+}
+
+button.btn1:hover {
+  background-color: white;
+  border: 1px solid;
+  color: black;
+  transition: 0.5s ease;
+}
