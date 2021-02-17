@@ -3,7 +3,6 @@ import '../index.css';
 
 
 import {Form, Container, Row, Col, Image, Button} from "react-bootstrap";
-import { render } from '@testing-library/react';
 import axios from 'axios';
 
 
@@ -15,8 +14,7 @@ class Register extends React.Component {
             error: null,
             username: null,
             email: null,
-            password: null,
-            registrationId: null
+            password: null
         }
     }  
 
@@ -32,7 +30,7 @@ class Register extends React.Component {
             password: this.state.password
         }
 
-        
+        // The API call to the springboot backend which posts registration form details to signup api endpoint
         axios.post('http://localhost:8080/api/auth/signup', {
             username: registration.username,
             email: registration.email,
@@ -46,6 +44,7 @@ class Register extends React.Component {
         
     }
 
+    // When a detail in the form changes, update the corresponding state variable so that it can be used to post to api
     handleInputChange = (event) => {
         event.preventDefault()
         this.setState({
@@ -55,9 +54,6 @@ class Register extends React.Component {
 
 
     render() {
-
-        const {username} = this.state;
-
         return (
             <div className="login-form">
                 <Container>
