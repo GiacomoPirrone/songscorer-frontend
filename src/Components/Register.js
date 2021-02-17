@@ -3,7 +3,6 @@ import '../index.css';
 
 
 import {Form, Container, Row, Col, Image, Button} from "react-bootstrap";
-import { render } from '@testing-library/react';
 import axios from 'axios';
 
 
@@ -15,28 +14,27 @@ class Register extends React.Component {
             error: null,
             username: null,
             email: null,
-            password: null,
-            registrationId: null
+            password: null
         }
     }  
 
     handleSubmit = (event) => {
         event.preventDefault()
         /*
-         * On submit, state data is store in a constant which can't be changed so that
+         * On submit, state data is stored in a constant which can't be changed so that
          * the data which is submitted is exactly the same as it was on submission.
          */
-        const registration = {
+        const registrationDetails = {
             username: this.state.username,
             email: this.state.email,
             password: this.state.password
         }
 
-        
+        // The API call to the springboot backend which posts registration form details to signup api endpoint
         axios.post('http://localhost:8080/api/auth/signup', {
-            username: registration.username,
-            email: registration.email,
-            password: registration.password
+            username: registrationDetails.username,
+            email: registrationDetails.email,
+            password: registrationDetails.password
         })
         .then((response) => {
             console.log(response);
@@ -46,6 +44,7 @@ class Register extends React.Component {
         
     }
 
+    // When a detail in the form changes, update the corresponding state variable so that it can be used to post to api
     handleInputChange = (event) => {
         event.preventDefault()
         this.setState({
@@ -55,9 +54,6 @@ class Register extends React.Component {
 
 
     render() {
-
-        const {username} = this.state;
-
         return (
             <div className="login-form">
                 <Container>
