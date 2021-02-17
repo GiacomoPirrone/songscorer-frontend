@@ -18,6 +18,7 @@ const Header = () => (
                     <Link className="links" to="/">New Releases</Link>
                 </Nav>
             </Navbar.Collapse>
+            
             <Link to="/login">
                 <button className="login-signup-btn">
                     Login
