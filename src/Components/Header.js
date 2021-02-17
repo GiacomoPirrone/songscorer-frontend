@@ -25,7 +25,7 @@ const Header = () => (
                     Login
                 </button>
             </Link>
-            <Link to="signup">
+            <Link to="/signup">
                 <button className="login-signup-btn">
                     Signup
                 </button>
