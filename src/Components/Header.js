@@ -15,9 +15,7 @@ const Header = () => (
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto justify-content-center">
                     <Link className="links" to="/">Home</Link>
-                    <Link className="links" href="#link">Link</Link>
-                    <Link className="links" href="#home">Home</Link>
-                    <Link className="links" href="#link">Link</Link>
+                    <Link className="links" to="/">New Releases</Link>
                 </Nav>
             </Navbar.Collapse>
             <Link to="/login">

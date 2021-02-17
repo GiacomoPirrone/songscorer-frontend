@@ -21,10 +21,10 @@ class Register extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault()
         /*
-         * On submit, state data is store in a constant which can't be changed so that
+         * On submit, state data is stored in a constant which can't be changed so that
          * the data which is submitted is exactly the same as it was on submission.
          */
-        const registration = {
+        const registrationDetails = {
             username: this.state.username,
             email: this.state.email,
             password: this.state.password
@@ -32,9 +32,9 @@ class Register extends React.Component {
 
         // The API call to the springboot backend which posts registration form details to signup api endpoint
         axios.post('http://localhost:8080/api/auth/signup', {
-            username: registration.username,
-            email: registration.email,
-            password: registration.password
+            username: registrationDetails.username,
+            email: registrationDetails.email,
+            password: registrationDetails.password
         })
         .then((response) => {
             console.log(response);
