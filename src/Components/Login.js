@@ -5,6 +5,7 @@ import '../index.css';
 import {Form, Container, Row, Col, Image, Button} from "react-bootstrap";
 import {Link} from 'react-router-dom';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 class Login extends React.Component {
 
@@ -34,11 +35,14 @@ class Login extends React.Component {
         })
         .then((response) => {
 
-            localStorage.setItem('authenticationToken', response.data.authenticationToken);
-            localStorage.setItem('refreshToken', response.data.refreshToken);
-            localStorage.setItem('expiresAt', response.data.expiresAt);
-            localStorage.setItem('username', response.data.username);
+            // If login proceeds successfully with the return of login data then assign it to cookies
+            Cookies.set('authenticationToken', response.data.authenticationToken);
+            Cookies.set('refreshToken', response.data.refreshToken);
+            Cookies.set('expiresAt', response.data.expiresAt);
+            Cookies.set('username', response.data.username);
+            
         }, (error) => {
+            // As of now this is mostly for dev reasons, if a login is unsuccessful we will let the use know via UI
             console.log(error);
         })
     }
