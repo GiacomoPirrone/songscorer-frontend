@@ -6,7 +6,7 @@ import {Form, Container, Row, Col, Image, Button} from "react-bootstrap";
 import {Link, Redirect} from 'react-router-dom';
 import axios from 'axios';
 import Cookies from 'js-cookie';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 class Login extends React.Component {

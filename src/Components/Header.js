@@ -5,6 +5,7 @@ import {Navbar, Nav} from "react-bootstrap";
 import { ReactComponent as Logo } from "../assets/Symphonyze_logo3.svg";
 import {Link} from 'react-router-dom';
 import { ToastContainer, Zoom} from 'react-toastify';
+import Cookies from 'js-cookie';
 import 'react-toastify/dist/ReactToastify.css';
 
 class Header extends React.Component {
@@ -14,6 +15,16 @@ class Header extends React.Component {
         this.state = {
             error: null
         }
+    }
+
+    logout = () => {
+        // Delete all associated cookies with this browser so that the user can log out
+        Cookies.remove('authenticationToken');
+        Cookies.remove('refreshToken');
+        Cookies.remove('expiresAt');
+        Cookies.remove('username');
+
+        this.props.handleLoggedInChange(false);
     }
 
     render() {
@@ -40,9 +51,9 @@ class Header extends React.Component {
                     {
                         // If user is logged in, then only present the log out button for them
                         this.props.loggedIn ?
-                        <Link to="/signup">
+                        <Link to="/">
                             {console.log(this.state.username)}
-                            <button className="login-signup-btn">
+                            <button onClick={this.logout} className="login-signup-btn">
                                 Logout
                             </button>
                         </Link>

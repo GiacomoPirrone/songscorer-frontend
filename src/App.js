@@ -40,7 +40,7 @@ class App extends React.Component {
   return (
       <Router>
         <div className="App">
-          <Header loggedIn={this.state.loggedIn} />
+          <Header loggedIn={this.state.loggedIn} handleLoggedInChange={this.handleLoggedInChange}/>
           {routes.map(({ path, component: C}) => (
             <Route
               path={path} 
