@@ -1,25 +1,60 @@
 import './App.css';
 
+import React from 'react';
 import Header from './Components/Header.js'
 import Login from './Components/Login.js'
 import Signup from './Components/Register.js'
 import Home from './Components/Home.js'
 import './index.css';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import Cookies from 'js-cookie';
+
+const routes = [
+  {
+    path: '/',
+    component: Home
+  },
+  {
+    path: '/signup',
+    component: Signup
+  }
+]
 
 
-function App() {
+class App extends React.Component {
+
+  constructor(props){
+      super(props);
+      this.handleLoggedInChange = this.handleLoggedInChange.bind(this);
+      this.state = {
+        //If there are cookies which contain a username then the user is logged in
+          loggedIn: Cookies.get('username') ? true : false
+        }
+  }
+
+  handleLoggedInChange = loggedIn => {
+    this.setState({ loggedIn })
+  }
   
+  render() {
   return (
-    <Router>
-      <div className="App">
-        <Header />
-        <Route path="/" exact component={Home} />
-        <Route path="/signup" component={Signup} />
-        <Route path="/login" component={Login} />
-      </div>
-    </Router>
-  );
+      <Router>
+        <div className="App">
+          <Header loggedIn={this.state.loggedIn} />
+          {routes.map(({ path, component: C}) => (
+            <Route
+              path={path} 
+              component={C}
+            />
+          ))}
+            <Route
+              path="/login"
+              render={(props) => <Login {...props} loggedIn={this.state.loggedIn} handleLoggedInChange={this.handleLoggedInChange} />} 
+            />
+        </div>
+      </Router>
+    )
+  }
 }
 
 export default App;
