@@ -5,6 +5,7 @@ import Header from './Components/Header.js'
 import Login from './Components/Login.js'
 import Signup from './Components/Register.js'
 import Home from './Components/Home.js'
+import SearchAlbum from './Components/SearchAlbum.js'
 import './index.css';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Cookies from 'js-cookie';
@@ -17,6 +18,10 @@ const routes = [
   {
     path: '/signup',
     component: Signup
+  },
+  {
+    path:'/rate',
+    component: SearchAlbum
   }
 ]
 
