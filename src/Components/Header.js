@@ -24,6 +24,7 @@ class Header extends React.Component {
         Cookies.remove('expiresAt');
         Cookies.remove('username');
 
+        // Logout user so the state of the app changes
         this.props.handleLoggedInChange(false);
     }
 
@@ -42,7 +43,7 @@ class Header extends React.Component {
                                 // Users should only be able to rate an album if they are logged in
                                 this.props.loggedIn ?
                                 <>
-                                    <Link className="links" to="/">Rate an Album</Link>
+                                    <Link className="links" to="/rate">Rate an Album</Link>
                                 </> :
                                 <></>
                             }
