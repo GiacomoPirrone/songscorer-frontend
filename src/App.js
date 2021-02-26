@@ -2,6 +2,7 @@ import './App.css';
 
 import React from 'react';
 import Header from './Components/Header.js'
+import Footer from './Components/Footer.js'
 import Login from './Components/Login.js'
 import Signup from './Components/Register.js'
 import Home from './Components/Home.js'
@@ -49,6 +50,7 @@ class App extends React.Component {
           {routes.map(({ path, component: C}) => (
             <Route
               path={path} 
+              exact
               component={C}
             />
           ))}
@@ -56,6 +58,7 @@ class App extends React.Component {
               path="/login"
               render={(props) => <Login {...props} loggedIn={this.state.loggedIn} handleLoggedInChange={this.handleLoggedInChange} />} 
             />
+            <Footer/>
         </div>
       </Router>
     )
